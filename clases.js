@@ -1,7 +1,10 @@
+//https://www.youtube.com/watch?v=C86JvqET61A&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA&index=24
+//https://www.youtube.com/watch?v=puxoJpOl9TA
 'use strict'
 
 
 //Aqui estamos creando una Clase
+//Todas las clases en javascript por default vienen publicas
 class Animal {
 
     //El constructor es un metodo especial que se ejecuta en el momento de instanciar la clase
@@ -55,12 +58,23 @@ class Perro extends Animal{
     ladrar() {
         console.log('guauu guauu');
         }
+    
+    //Aqui estamos creando un metodo estatico,
+    //estos metodos se van ejecutar,
+    //sin instanciar la clase
+    static queEres(){
+        console.log('Soy un Perro')
+    }
 }
 
 
 const roger = new Perro('Roger', 'Macho', 'chiuaua');
 console.log(roger);
 roger.ladrar();
+Perro.queEres()
+
+
+
 
 
 
