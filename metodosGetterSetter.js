@@ -17,6 +17,13 @@ class Animal{
     saludar(nombre){
         console.log(`Hola soy un animal me llamo ${nombre}`)
     }
+
+    //Un metodo statico (static), 
+    //se puede ejecutar sin nececidad de instanciar la clase,
+    //o crear un objeto de la clase
+    static queEres(){
+        console.log('Soy Diego, intentando estudiar programacion')
+    }
 }
 
 const perro = new Animal('pepe', 'Macho');
@@ -49,3 +56,7 @@ console.log(rayo.raza)
 
 rayo.setRaza = 'Horrible';
 console.log(perro.getRaza);
+
+
+console.log(perro.saludar('rayo'));
+Animal.queEres();
