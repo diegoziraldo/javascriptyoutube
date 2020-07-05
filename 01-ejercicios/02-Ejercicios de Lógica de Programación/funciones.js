@@ -9,29 +9,67 @@ function reversa(text = ""){
     //Aqui estamos validando si se ingresa o no un texto
     if (!text) return console.warn('No se ingreso ningun texto');
     
-    if (!text) return console.warn('Debe ingresar el texto con comillas');
-
+    //Aqui estamos validando que el valor ingresado sea solamente letras
     if (isNaN(!text)) return console.warn('Solamente se pueden poner palabras');
     
     //Una ves que se cargo el texto en el parametro de la funcion,
-    //
+    //se le pasara el metodo 'split()', lo que haces este metodo, 
+    //es darnos un 'array' con todos los valores separados,
+    //segun el valor que le hayamos puesto en el parametro del metodo.
+
+    //Luego le pasaremos el metodo 'reverse()', este metodo lo que hace,
+    //es darnos vuelta el orden de los elementos del array, 
+    //si ingresamos tres datos, entonces el primer dato sera el ultimo,
+    //y el ultimo dato sera el primero.
+    
+    //Y por ultimo le pasaremos el metodo join(),
+    //este metodo va a hacer lo mismo que split pero al reves,
+    //a una cadena de elementos la convertira en un 'String',
+    //segun el valor que le hayamos puesto en el parametro del metodo. 
     else return console.log(text.split("").reverse().join("")); 
 }
-    reversa(a);
+    //Aqui estamos ejecutando la funcion que creamos anteriormente,
+    //y como parametros le estamos pasando el texto a dar vuelta.
+    reversa("para bailar la bamba se nececita una poca de gracias, una poca de gracias y una cocita y arriba y arriba");
 
 
 
 
 
-
-
+/* --------------------------------------------------------------------------- */
 
 
 
 
 
 //6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //7) Programa una función que valide si una palabra o frase dada, es un palíndromo(que se lee igual en un sentido que en otro), pe.mifuncion("Salas") devolverá true.
-//8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5.
-
-
+//8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5
