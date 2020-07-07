@@ -42,27 +42,29 @@ function reversa(text = ""){
 
 
 
-//6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+//6) Programa una función para contar el número de veces 
+//que se repite una palabra en un texto largo, pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
 
-function palabraRepetida(texto, palabra){
-    let palabrasRepetidas;
+function palabraRepetida(texto="", palabra){
+    
+    let repetidas=0;
+    let palabrasNoRepetidas;
     let palabras = texto.split(" ")
     
-    for(let i=0;i<=palabras.length;i++){
-        if(palabras === palabra){
-
-        parseInt(palabrasRepetidas) = palabrasRepetidas++;
-        //return console.log(`Las palabras repetidas son: ${palabrasRepetidas}`)
-        
-    }else{
-
-    }
+    if (!isNaN(palabra)) return console.warn('No se pueden ingresar numeros');
+    if (!isNaN(texto)) return console.warn('No se pueden ingresar numeros');
     
-    /* return console.log(`Las palabras repetidas son: ${palabras}`) */
+    for(let i=0;i<=palabras.length;i++){
+        if(palabras[i] === palabra){
+            repetidas++;
+    }
 }
-console.log(palabrasRepetidas)
+
+console.log(`Las palabras repetidas son: ${repetidas}`)
 }
-palabraRepetida("hola mundo adios mundo", "mundo")
+
+
+palabraRepetida("Hola mundo", "")
 
 
 
