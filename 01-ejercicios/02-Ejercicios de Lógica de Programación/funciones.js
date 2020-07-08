@@ -30,7 +30,7 @@ function reversa(text = ""){
 }
     //Aqui estamos ejecutando la funcion que creamos anteriormente,
     //y como parametros le estamos pasando el texto a dar vuelta.
-    reversa("Para bailar la bamba para bailar la bamba se necesita un poquito de gracia poquito de gracia y una cocita y arriba y arriba y arriba y arriba arriba ire por ti sere por ti sere bamba bamba ");
+    reversa("Para bailar la bamba para bailar la bamba se necesita un poquito de gracia poquito de gracia y una cosita y arriba y arriba y arriba y arriba arriba ire por ti sere por ti sere bamba bamba ");
 
 
 
@@ -43,7 +43,8 @@ function reversa(text = ""){
 
 
 //6) Programa una función para contar el número de veces 
-//que se repite una palabra en un texto largo, pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+//que se repite una palabra en un texto largo, 
+//pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
 
 function palabraRepetida(texto="", palabra){
     
@@ -60,11 +61,11 @@ function palabraRepetida(texto="", palabra){
     }
 }
 
-console.log(`Las palabras repetidas son: ${repetidas}`)
+console.log(`Las palabras repetidas a la palabra "${palabra}" son: ${repetidas}`)
 }
 
 
-palabraRepetida("Hola mundo", "")
+palabraRepetida("Para bailar la bamba para bailar la bamba se necesita un poquito de gracia poquito de gracia y una cosita y arriba y arriba y arriba y arriba arriba ire por ti sere por ti sere bamba bamba", "bamba")
 
 
 
