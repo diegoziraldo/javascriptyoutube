@@ -46,7 +46,7 @@ function reversa(text = ""){
 //que se repite una palabra en un texto largo, 
 //pe.miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
 
-function palabraRepetida(texto="", palabra){
+function palabraRepetida(texto = "", palabra = ""){
     
     let repetidas=0;
     let palabrasNoRepetidas;
@@ -54,6 +54,8 @@ function palabraRepetida(texto="", palabra){
     
     if (!isNaN(palabra)) return console.warn('No se pueden ingresar numeros');
     if (!isNaN(texto)) return console.warn('No se pueden ingresar numeros');
+    if (texto === undefined) return console.warn('No se ingreso ningun texto');
+    if (palabra === undefined) return console.warn('No se ingreso ningun texto');
     
     for(let i=0;i<=palabras.length;i++){
         if(palabras[i] === palabra){
@@ -70,6 +72,36 @@ palabraRepetida("Para bailar la bamba para bailar la bamba se necesita un poquit
 
 
 
+/* ----------------------------------------------------------------------------- */
+
+
+
+
+//7) Programa una función que valide si una palabra o frase dada, 
+//es un palíndromo(que se lee igual en un sentido que en otro), 
+//pe.mifuncion("Salas") devolverá true.
+
+function palindromo(texto = ""){
+    if (!isNaN(texto)) return console.warn('Solo ingresar texto!');
+    
+    let letrasTexto = texto.toLowerCase();
+    let letrasTextoReves = texto.split("").reverse().join("").toLowerCase();
+    
+        if(letrasTexto === letrasTextoReves){
+            console.log(true)
+        }
+        else{
+            console.log(false)
+        }
+
+}
+palindromo('Salas')
+
+
+
+
+
+/* ------------------------------------------------------------------------------------ */
 
 
 
@@ -77,21 +109,28 @@ palabraRepetida("Para bailar la bamba para bailar la bamba se necesita un poquit
 
 
 
+//8) Programa una función que elimine cierto patrón de caracteres 
+//de un texto dado, pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") 
+//devolverá "1, 2, 3, 4 y 5
+
+function patron(texto, buscar){
+    let textoIndex = texto.indexOf("Hola");
+    //let array = [];
+
+/*     for (let i = 0; i < texto.length; i++) {
+        if (!isNaN(texto[i])) {
+            //console.log('si')
+            console.log(texto[i]);
+        }
+        else{
+            console.log('no')
+        }
+    } */
 
 
 
 
+    console.log(textoIndex);
+}
 
-
-
-
-
-
-
-
-
-
-
-//7) Programa una función que valide si una palabra o frase dada, es un palíndromo(que se lee igual en un sentido que en otro), pe.mifuncion("Salas") devolverá true.
-//8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe.miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá "1, 2, 3, 4 y 5
-//
+console.log(patron('Hola1, Hola2, Hola3', 'Hola2'));
