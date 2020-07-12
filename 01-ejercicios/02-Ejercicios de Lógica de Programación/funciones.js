@@ -32,11 +32,21 @@ function reversa(text = ""){
     //y como parametros le estamos pasando el texto a dar vuelta.
     reversa("Para bailar la bamba para bailar la bamba se necesita un poquito de gracia poquito de gracia y una cosita y arriba y arriba y arriba y arriba arriba ire por ti sere por ti sere bamba bamba ");
 
+    //Resuelto Clase
+    const invertirCadena = (cadena = "")=>{
+        (!cadena)
+        ?console.warn('No ingresaste ningun texto')
+        :console.log(cadena.split("").reverse().join(""));
+
+    }
+    invertirCadena('Hola');
+    
 
 
 
 
-/* --------------------------------------------------------------------------- */
+
+    /* --------------------------------------------------------------------------- */
 
 
 
@@ -51,12 +61,11 @@ function palabraRepetida(texto = "", palabra = ""){
     let repetidas=0;
     let palabrasNoRepetidas;
     let palabras = texto.split(" ")
-    
-    if (!isNaN(palabra)) return console.warn('No se pueden ingresar numeros');
+    if (!texto) return console.warn('No ingresaste texto en el parametro del texto');
+    if (!palabra) return console.warn('No ingresaste texto en el parametro de la palabra');
     if (!isNaN(texto)) return console.warn('No se pueden ingresar numeros');
-    if (texto === undefined) return console.warn('No se ingreso ningun texto');
-    if (palabra === undefined) return console.warn('No se ingreso ningun texto');
-    
+    if (!isNaN(palabra)) return console.warn('No se pueden ingresar numeros');
+        
     for(let i=0;i<=palabras.length;i++){
         if(palabras[i] === palabra){
             repetidas++;
@@ -65,9 +74,45 @@ function palabraRepetida(texto = "", palabra = ""){
 
 console.log(`Las palabras repetidas a la palabra "${palabra}" son: ${repetidas}`)
 }
-
-
 palabraRepetida("Para bailar la bamba para bailar la bamba se necesita un poquito de gracia poquito de gracia y una cosita y arriba y arriba y arriba y arriba arriba ire por ti sere por ti sere bamba bamba", "bamba")
+
+//Resuelto clase
+
+const textoEnCadena = (cadena = "", texto = "")=>{
+    if (!texto) return console.warn('No ingresaste texto en el parametro del texto');
+    if (!cadena) return console.warn('No ingresaste texto en el parametro de la palabra');
+    if (!isNaN(texto)) return console.warn('No se pueden ingresar numeros');
+    if (!isNaN(cadena)) return console.warn('No se pueden ingresar numeros');
+
+    let i = 0;
+    let contador=0;
+
+    //Aqui estamos creando un bucle 'while', 
+    while(i!==-1){
+        //Dentro del bucle vamos a igualar el valor de la variable i,
+        //con lo que nos devolvera el método 'indexOf()',
+        //Este metodo lo que hace es devolvernos la posicion,
+        //de la palabra que buscaremos en la cadena de texto.
+        i = cadena.indexOf(texto,i);
+        //Una ves que nos devuelve el numero de la posicion, 
+        //vamos a validar que este no sea igual a -1,
+        //si no es igual a -1 entonces entrara dentro del condicional
+        if(i!==-1){
+            //Dentro del condicional a la variable 'i' y la variable,
+            //'contador', le sumaremos uno, entonces la variable 'i',
+            //va a valer el el numero de la posicion del string + 1,
+            //y la variable contador va a pasar de 0 a 1, que son
+            //las igualdades que hay en el texto 
+            i++;
+            contador++
+        }
+    }
+    //Aqui vamos a mostrar por consola el resultado de la funcion
+    console.info(`La palabra ${texto}, se repite ${contador} `)
+}
+
+textoEnCadena('Hola mundo adios Mundo', 'mundo');
+
 
 
 
@@ -77,12 +122,14 @@ palabraRepetida("Para bailar la bamba para bailar la bamba se necesita un poquit
 
 
 
+
 //7) Programa una función que valide si una palabra o frase dada, 
 //es un palíndromo(que se lee igual en un sentido que en otro), 
 //pe.mifuncion("Salas") devolverá true.
 
 function palindromo(texto = ""){
-    if (!isNaN(texto)) return console.warn('Solo ingresar texto!');
+    if (!texto) return console.warn('No se ingreso ningun texto');
+    if (!isNaN(texto)) return console.warn('No se puede ingresar numeros');
     
     let letrasTexto = texto.toLowerCase();
     let letrasTextoReves = texto.split("").reverse().join("").toLowerCase();
@@ -95,7 +142,23 @@ function palindromo(texto = ""){
         }
 
 }
-palindromo('Salas')
+palindromo('jaj')
+
+//Resolucion Video
+
+function palindromo(texto = "") {
+    if (!texto) return console.warn('No se ingreso ningun texto');
+    if (!isNaN(texto)) return console.warn('No se puede ingresar numeros');
+
+    texto = texto.toLowerCase();
+    let letrasTextoReves = texto.split("").reverse().join("");
+
+    return (texto === letrasTextoReves)
+    ?console.log(true)
+    :console.log(false)
+
+}
+palindromo('jojO')
 
 
 
@@ -128,9 +191,18 @@ function patron(texto, buscar){
     } */
 
 
+//Resolucion Video
 
+const eliminarCaracteres = (texto="", patron="")=>{
+    (!texto)
+    ?console.warn('No ingresaste ningun texto')
+    :(!patron)
+        ?console.warn('No ingresaste ningun patron de caracteres')
+        :console.info(texto.replace(new RegExp(patron, 'ig'),""))
+}
 
-    console.log(textoIndex);
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+
 }
 
 console.log(patron('Hola1, Hola2, Hola3', 'Hola2'));
