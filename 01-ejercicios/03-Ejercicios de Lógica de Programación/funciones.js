@@ -50,8 +50,8 @@ function numeroAleatorio(){
 //si es capicúa o no(que se lee igual en un sentido que en otro), 
 //pe.miFuncion(2002) devolverá true.
 
-const capicua = (valor){
-    
+const capicua = (valor)=>{
+
 }
 
 
