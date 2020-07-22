@@ -131,9 +131,15 @@ function palindromo(texto = ""){
     if (!texto) return console.warn('No se ingreso ningun texto');
     if (!isNaN(texto)) return console.warn('No se puede ingresar numeros');
     
+    //Con el metodo "toLowerCase()", convertiremos todos los caracteres que nos llegan en minusculas
     let letrasTexto = texto.toLowerCase();
+    //Cuando tenemos todo el texto igualdados en minusculas,
+    //vamos a separar cada caracter en un elemento del array, lo vamos a dar vuelta,
+    //lo vamos vamos a volver a juntar y lo vamos a igualar en minusculas
     let letrasTextoReves = texto.split("").reverse().join("").toLowerCase();
     
+        //Una ves que tenemos en una variable texto al reves y en otra variable,
+        //el texto al derecho, la vamos a comparar entre si. 
         if(letrasTexto === letrasTextoReves){
             console.log(true)
         }
@@ -193,12 +199,21 @@ function patron(texto, buscar){
 
 //Resolucion Video
 
+//Aca estamos creando la funcion donde vamos a recibir dos valores por parametros
 const eliminarCaracteres = (texto="", patron="")=>{
+    //Aca estamos evaluando si en el parametro texto hay algun valor
     (!texto)
     ?console.warn('No ingresaste ningun texto')
+    //Aca estamos evaluando si en el parametro patron hay algun valor
     :(!patron)
         ?console.warn('No ingresaste ningun patron de caracteres')
+        //Aca estamos creando una expresion regular, lo que hacen las expreciones regulares es
+        //buscar un patron en las cadenas de texto.
+        //este valor del patron se lo pasaremos en el primer parametro, en el segundo iran las banderas,
+        //que es lo que le va a dar la forma de la busqueda, y en el segundo parametro de la funcion,
+        //ira el valor que le pondra el metodo "replace()" cuando se encuentre una coincidencia.
         :console.info(texto.replace(new RegExp(patron, 'ig'),""))
+
 }
 
 eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
