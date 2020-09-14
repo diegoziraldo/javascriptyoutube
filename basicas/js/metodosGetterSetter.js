@@ -4,24 +4,24 @@
 //Los metodos setter y getter no se ejecutan como metodos en javascript,
 //se ejecutan como propiedades
 
-class Animal{
-    constructor(nombre, genero){
+class Animal {
+    constructor(nombre, genero) {
         this.nombre = nombre;
         this.genero = genero;
     }
 
-    sonar(){
+    sonar() {
         console.log('Hago sonidos por que estoy vivo')
     }
 
-    saludar(nombre){
+    saludar(nombre) {
         console.log(`Hola soy un animal me llamo ${nombre}`)
     }
 
     //Un metodo statico (static), 
     //se puede ejecutar sin nececidad de instanciar la clase,
     //o crear un objeto de la clase
-    static queEres(){
+    static queEres() {
         console.log('Soy Diego, intentando estudiar programacion')
     }
 }
@@ -31,8 +31,8 @@ console.log(perro);
 console.log(perro.saludar('pepe'));
 
 
-class Perro extends Animal{
-    constructor(nombre, genero, tamanio){
+class Perro extends Animal {
+    constructor(nombre, genero, tamanio) {
         super(nombre, genero);
         this.tamanio = tamanio;
         this.raza = null
@@ -42,11 +42,11 @@ class Perro extends Animal{
         return this.raza;
     }
 
-    set setRaza(raza){
+    set setRaza(raza) {
         this.raza = raza
     }
 
-    
+
 
 }
 

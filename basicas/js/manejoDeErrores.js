@@ -21,12 +21,12 @@ try {
     let numero = 'a';
     //Con esta propiedad vamos a saber si la variable tiene cargado un dato de tipo 'number',
     //si el dato es de tipo number, devolvera un true, sino un false
-    if(isNaN(numero)){
+    if (isNaN(numero)) {
         //Con el elemento 'throw', podremos crear un error personalizado
         throw new Error('El caracter introducido no es un numeros');
-4
+        4
     }
-    console.log(numero*numero)
+    console.log(numero * numero)
     //El catch lo que va a hacer es capturar el error que le va a mandar el try,
     //en este caso le va a mandar el error que fue creado con throw, 
     //ya que este fue creado con el objeto 'new Error' 

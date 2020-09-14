@@ -16,7 +16,7 @@ Prototipos: Es el mecanismo por el cual un objeto puede heredar de un objeto pad
 
 const animal = {
     nombre: 'Pepe',
-    sonar(){
+    sonar() {
         console.log('Hago sonidos por que estoy vivo')
     }
 }

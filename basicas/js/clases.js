@@ -10,16 +10,16 @@ class Animal {
     //El constructor es un metodo especial que se ejecuta en el momento de instanciar la clase
     //En el constructor vamos a darle las propiedades a la clase, los valores de estas propiedades,
     //van a ser recibidas mediante parametros
-    constructor (nombre, genero){
+    constructor(nombre, genero) {
         this.nombre = nombre;
         this.genero = genero;
     }
     //Luego vamos a crear los metodos de la clase
-    sonar(){
+    sonar() {
         console.log('Hago sonidos por que estoy vivo');
     }
 
-    saludar(){
+    saludar() {
         console.log(`Hola me llamo ${this.nombre}`);
     }
 }
@@ -45,24 +45,24 @@ rayo.saludar()
 //Aqui estamos creando una clase (Perro), usando como clase la clase padre (Animal),
 //cuando creo una clase de la clase padre la clase hijo va a heredar todas sus propiedades y metodos,
 //a la clase hija le puedo agregar mas propiedades y métodos
-class Perro extends Animal{
-    constructor(nombre, genero, raza){
-    //La palabra clave super es usada para acceder y llamar funciones del padre de un objeto
-    super(nombre, genero);
-    this.raza = raza;
+class Perro extends Animal {
+    constructor(nombre, genero, raza) {
+        //La palabra clave super es usada para acceder y llamar funciones del padre de un objeto
+        super(nombre, genero);
+        this.raza = raza;
     }
     sonar() {
         console.log('Hago sonidos por que estoy vivo');
-        }
+    }
 
     ladrar() {
         console.log('guauu guauu');
-        }
-    
+    }
+
     //Aqui estamos creando un metodo estatico,
     //estos metodos se van ejecutar,
     //sin instanciar la clase
-    static queEres(){
+    static queEres() {
         console.log('Soy un Perro')
     }
 }
@@ -72,22 +72,3 @@ const roger = new Perro('Roger', 'Macho', 'chiuaua');
 console.log(roger);
 roger.ladrar();
 Perro.queEres()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

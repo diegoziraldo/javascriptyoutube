@@ -10,8 +10,8 @@ const diego = {
     apellido: 'Ziraldo',
     edad: 35,
     pasatiempos: ['manejar', 'jugar ajedrez', 'programar'],
-    soltero: true, 
-    contacto:{
+    soltero: true,
+    contacto: {
         facebook: 'chiricapo@hotmail.com',
         email: 'ziraldodiego@gmail.com',
         cel: 1550973167
@@ -19,7 +19,7 @@ const diego = {
     //Con la palabra 'this', voy a poder usar una propiedad que tengo dentro del objeto,
     //si no le pongo la palabra this, la variable va a estar esperando un valor,
     //desde el parametro de la funcion
-    saludo: function(){
+    saludo: function () {
         console.log(`Hola que tal, mi nombre es: ${this.nombre}, tengo ${this.edad} años`)
     }
 }

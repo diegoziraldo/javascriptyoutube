@@ -6,7 +6,7 @@
 //Se pueden retornar como un valor, la funcion puede ser igual a un valor
 
 //Declaracion de Funcion:
-function EstoEsUnaFuncion(){
+function EstoEsUnaFuncion() {
     console.log('Uno');
     console.log('Dos');
     console.log('Tres');
@@ -20,7 +20,7 @@ EstoEsUnaFuncion()
 //luego esta funcion se va a convertir en el valor que mando el return
 //Cuando hay un return en una funcion esta se va a finalizar en el momento que se ejecute el return,
 //todo lo que haya despues no lo va a ejecutar
-function unaFuncionQueDevuelveValor(){
+function unaFuncionQueDevuelveValor() {
     console.log('Uno');
     console.log('Dos');
     console.log('Tres');
@@ -35,7 +35,7 @@ let edad = 35; */
 //Aqui estamos creando una funcion que va a recibir dos parametros
 //A los parametros le podemos cargar valores predeterminados, 
 //por si no llegan a cargarse cuando llamemos a la funcion
-function saludar(nombre = 'Desconocido', edad=3){
+function saludar(nombre = 'Desconocido', edad = 3) {
     //Aqui estamos mandando un mensaje por consola
     console.log(`Hola me llamo ${nombre}, tengo ${edad} años`)
 }
@@ -48,33 +48,14 @@ saludar();
 
 //Esto es una funcion declarada
 funcionDeclarada();
-function funcionDeclarada(){
+
+function funcionDeclarada() {
     console.log('Esto es una funcion declarada, puede invocarse en cualquier parte del codigo, incluso antes de que la funcion sea declarada')
 }
 
 //Esto es una funcion expresada
-let funcionExpresada = function(){
+let funcionExpresada = function () {
     console.log('Esto es una funcion expresada, es decir una funcion que fue asignada como valor a una variable, esta funcion no se la puede llamar antes de ser declarada')
 }
 
 funcionExpresada();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

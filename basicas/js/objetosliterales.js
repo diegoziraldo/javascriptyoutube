@@ -6,7 +6,7 @@ let edad = 10;
 const perro = {
     nombre: nombre,
     edad: edad,
-    ladrar: function(){
+    ladrar: function () {
         console.log('guauu guauu')
     }
 }
@@ -20,7 +20,7 @@ console.log(perro.ladrar);
 const dog = {
     nombre,
     edad,
-    ladrar(){
+    ladrar() {
         console.log('guauu guauu guauu')
     }
 }

@@ -7,6 +7,3 @@ export const pi = Math.PI;
 
 export let usuario = 'Diego';
 export let password = '1234';
-
-
-

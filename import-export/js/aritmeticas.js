@@ -1,10 +1,10 @@
 'use strict'
 
-function sumar (a,b){
+function sumar(a, b) {
     return a + b
 }
 
-function restar (a, b){
+function restar(a, b) {
     return a - b
 }
 
@@ -21,4 +21,3 @@ export const aritmetica = {
 export default function saludar() {
     console.log('Hola como estas')
 }
-

@@ -8,7 +8,8 @@
 
 //Contando caracteres
 console.log('1)Programa una función que cuente el número de caracteres, de una cadena de texto, pe.miFuncion("Hola Mundo") devolverá 10.')
-function primerEjercicio(texto){
+
+function primerEjercicio(texto) {
     texto = texto.length;
     return `La cantidad de caracteres que tiene el texto son: ${texto}`;
 }
@@ -23,12 +24,12 @@ console.log(primerEjercicio2([2, 4, 5, 2, 4]))
 
 //Contando objetos
 let miObjeto = {
-    nombre : 'Diego',
-    apellido : 'Ziraldo',
-    edad : 35,
-    sexo : 'Masculino',
-    
-    function(){
+    nombre: 'Diego',
+    apellido: 'Ziraldo',
+    edad: 35,
+    sexo: 'Masculino',
+
+    function () {
         console.log('Esta es mi funcion')
     }
 }
@@ -69,11 +70,11 @@ console.log('Resolucion del ejercicio 1, con arrow function')
 
 //Aqui estamos creando una funcion flecha, 
 //la que guardaremos en una constante.
-const contarCaracteres = (texto ="")=>
-//Aqui estamos aplicando los operadores "ternarios", 
-//el cual nos simplifica muchisimo las lineas de codigo
-    (!texto) ? console.warn('No se ingreso ningun texto')
-    :console.info(`El texto ingresado es ${texto}, y la cadena tiene ${texto.length} caracteres`)
+const contarCaracteres = (texto = "") =>
+    //Aqui estamos aplicando los operadores "ternarios", 
+    //el cual nos simplifica muchisimo las lineas de codigo
+    (!texto) ? console.warn('No se ingreso ningun texto') :
+    console.info(`El texto ingresado es ${texto}, y la cadena tiene ${texto.length} caracteres`)
 
 //Aqui estamos llamando a la funcion y cargandole el parametro
 contarCaracteres()
@@ -99,18 +100,19 @@ contarCaracteres()
 
 //Contando caracteres de un String
 console.log('2)Programa una función que te devuelva el texto recortado, según el número de caracteres indicados, pe.miFuncion("Hola Mundo", 4) devolverá "Hola".')
+
 function segundoEjercicio(texto) {
-    return texto.slice(0,5);
+    return texto.slice(0, 5);
 }
 let text = segundoEjercicio('Hello World')
 console.log(text)
 
 
 //Contando elementos del array
-function segundoEjercicio2(texto){
+function segundoEjercicio2(texto) {
     return texto.slice(0);
 }
-let text2 = segundoEjercicio2(['Queen','Metallica','Nirvana', 'Kiss', 'Pink Floyd'])
+let text2 = segundoEjercicio2(['Queen', 'Metallica', 'Nirvana', 'Kiss', 'Pink Floyd'])
 console.log(text2)
 
 
@@ -127,36 +129,39 @@ let miObjeto2 = {
 }
 
 let cant = Object.values(miObjeto2)
-console.log(cant.slice(1,3))
+console.log(cant.slice(1, 3))
 
 
 //2)Ejercicio Resuelto con arrow function
 console.log('Ejercicio Resuelto numero 2')
 //Aqui estamos guardando en una constante un funcion arrow
-const recortarTexto = (cadena = "", longitud = undefined) =>    
+const recortarTexto = (cadena = "", longitud = undefined) =>
     //Aqui estamos usando los condicionales de operadores ternarios,
     //para validar si se ingreso o no un texto.
     (!cadena)
-        //Si la cadena esta vacia, recibo un false, 
-        //pero con el signo de exclamacion lo doy vuelta, 
-        //para que sea un true entonces entre al primer warn
-        ? console.warn('No ingresaste ningun texto')
-        //si es falso, me va a preguntar si longitud,
-        //es "undefined", si es asi me va a mostrar el warn
-        : (longitud===undefined)
-            ? console.warn('No ingresaste la longitud para cortar el texto')
-            //Si la longitud no es undefined, 
-            //entonces los parametros estan completos, 
-            //y me ejecuta la funcion correctamente
-            : console.info(cadena.slice(0, longitud));
+    //Si la cadena esta vacia, recibo un false, 
+    //pero con el signo de exclamacion lo doy vuelta, 
+    //para que sea un true entonces entre al primer warn
+    ?
+    console.warn('No ingresaste ningun texto')
+    //si es falso, me va a preguntar si longitud,
+    //es "undefined", si es asi me va a mostrar el warn
+    :
+    (longitud === undefined) ?
+    console.warn('No ingresaste la longitud para cortar el texto')
+    //Si la longitud no es undefined, 
+    //entonces los parametros estan completos, 
+    //y me ejecuta la funcion correctamente
+    :
+    console.info(cadena.slice(0, longitud));
 
-        
 
-    recortarTexto()
-    recortarTexto('', 6)
-    recortarTexto('Hola Mundo', )
-    recortarTexto('Hola Mundo', 6)
-    
+
+recortarTexto()
+recortarTexto('', 6)
+recortarTexto('Hola Mundo', )
+recortarTexto('Hola Mundo', 6)
+
 
 
 
@@ -173,7 +178,8 @@ const recortarTexto = (cadena = "", longitud = undefined) =>
 
 //Separando palabras de un string a un array
 console.log('3)Programa una función que dada una String te devuelva un Array, de textos separados por cierto caracter, pe.miFuncion("hola que tal", " ") devolverá["hola", "que", "tal"].')
-function tercerEjercicio(texto){
+
+function tercerEjercicio(texto) {
     return texto.split(' ');
 }
 
@@ -187,27 +193,29 @@ console.log('Ejercicio Resuelto numero 3')
 
 //Aqui estamos creando la constante "cadenaAArreglo",
 //donde guardaremos la funcion arrow
-const cadenaAArreglo = (cadena = "", separador=undefined)=>
-    
+const cadenaAArreglo = (cadena = "", separador = undefined) =>
+
     //Aqui evaluaremos el parametro "cadena", si este viene vacio,
     //entonces devolvera un false, 
     //pero al darlo vuelta con el signo de exclamacion, sera true.
-    (!cadena)
-        ?console.warn("No ingresaste una cadena de texto")
-        //Aqui evaluaremos el parametro "separador", 
-        //que esta predefinido como "undefined", 
-        //si este no recibe ningun valor seguira siendo undefined,
-        //entonces sera true. 
-        :(separador===undefined)
-            ?console.warn("No ingresaste el caracter separador")
-            //Si llegamos hasta aqui es porque todos los parametros,
-            //fueron correctamente cargados, entonces se ejecutara el codigo
-            //Lo que hace la propiedad "split",  
-            //es crearnos un array con elementos,
-            //separados por un elemento definido
-            :console.info(cadena.split(separador))
+    (!cadena) ?
+    console.warn("No ingresaste una cadena de texto")
+    //Aqui evaluaremos el parametro "separador", 
+    //que esta predefinido como "undefined", 
+    //si este no recibe ningun valor seguira siendo undefined,
+    //entonces sera true. 
+    :
+    (separador === undefined) ?
+    console.warn("No ingresaste el caracter separador")
+    //Si llegamos hasta aqui es porque todos los parametros,
+    //fueron correctamente cargados, entonces se ejecutara el codigo
+    //Lo que hace la propiedad "split",  
+    //es crearnos un array con elementos,
+    //separados por un elemento definido
+    :
+    console.info(cadena.split(separador))
 
-    cadenaAArreglo("Hola que tal", " ")
+cadenaAArreglo("Hola que tal", " ")
 
 
 
@@ -227,6 +235,7 @@ const cadenaAArreglo = (cadena = "", separador=undefined)=>
 
 //Repitiendo el texto de una cadena
 console.log('4)Programa una función que repita un texto X veces pe.miFuncion("Hola Mundo", 3), devolverá Hola Mundo Hola Mundo Hola Mundo.')
+
 function cuartoEjercicio(texto) {
     return texto.repeat(3);
 }
@@ -239,17 +248,17 @@ console.log(repeticiones)
 console.log('4)Ejercicio resuelto')
 
 //Aqui estamos guardando una funcion flecha dentro de una constante
-const repetirTexto = (texto2 = "", veces = undefined) =>{
-    
+const repetirTexto = (texto2 = "", veces = undefined) => {
+
     //Aqui estamos validando el primer parametro fue completado
-    if(!texto2) return console.warn('No ingresaste un texto');
+    if (!texto2) return console.warn('No ingresaste un texto');
 
     //Aqui estamos validando si el segundo parametro,
     //el cual lo estamos verificando mediante la validacion de igualdad,
     //entonces si el parametro 'veces', es igual a undefined, 
     //se ejecutara el siguiente codigo
-    if(veces === undefined) return console.warn("No ingresaste el numero de veces a repetir el codigo");
-    
+    if (veces === undefined) return console.warn("No ingresaste el numero de veces a repetir el codigo");
+
     if (veces === 0) return console.error("El numero de veces no puede ser cero");
     //Aqui estamos usando la propiedad 'sign' del objeto "Math",
     //esta propiedad lo que haces es darnos tres numero, 
@@ -257,13 +266,13 @@ const repetirTexto = (texto2 = "", veces = undefined) =>{
     //este me devolvera un -1, si ingreso un cero, me devolvera un cero,
     //si ingreso un numero mayor a cero, me devolvera un uno,
     //asi estoy validando que el numero sea mayor a cero
-    if(Math.sign(veces) === -1) return console.error("El numero de veces no puede ser negativo");
+    if (Math.sign(veces) === -1) return console.error("El numero de veces no puede ser negativo");
 
     //Aqui estoy creando un bucle for, con el bucle for lo que logro,
     //es repetir la cantidad de veces que le cargue en el parametro,
-    for(let i=1;i<=veces;i++) console.info(`${texto2}, ${i}`);
+    for (let i = 1; i <= veces; i++) console.info(`${texto2}, ${i}`);
 
-    
+
 }
 
-repetirTexto('Hola',10)
+repetirTexto('Hola', 10)

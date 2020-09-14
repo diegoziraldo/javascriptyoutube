@@ -4,7 +4,7 @@
 //Aritmeticos: + - * / % ()
 
 let a = 5 + 5;
-let modulo = 5%2;
+let modulo = 5 % 2;
 
 
 console.log(a)
