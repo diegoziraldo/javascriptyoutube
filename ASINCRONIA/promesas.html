@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Promesas</title>
+</head>
+
+<body>
+	<h1>Promesas</h1>
+
+	<script>
+		//Aqui estamos creando la funcion 'cuadradoPromise()'.
+		function cuadradoPromise(value) {
+			//Aqui vamos a hacer que la funcion retorne una promesa,
+			//entonces vamos a crear la promesa,
+			//a la cual le cargaremos una funcion.
+			//Si la promesa se pudo resolver,
+			//nos devolvera el valor por el primer parametro,
+			//sino lo enviara por el segundo parametro.
+			return new Promise((resolve, reject) => {
+				setTimeout(() => {
+					resolve({
+						value: value,
+						result: value * value
+					})
+				}, 0 | Math.random() * 1000);
+			})
+		}
+
+
+		cuadradoPromise(0)
+			.then((obj) => {
+				console.log(obj.value, obj.result);
+				return cuadradoPromise(17)
+			})
+			.then((obj) => {
+				console.log(obj.value, obj.result);
+				return cuadradoPromise(25)
+			})
+			.then((obj) => {
+				console.log(obj.value, obj.result);
+				return cuadradoPromise()
+			})
+	</script>
+</body>
+
+</html>
