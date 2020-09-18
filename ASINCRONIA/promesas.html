@@ -13,6 +13,9 @@
 	<script>
 		//Aqui estamos creando la funcion 'cuadradoPromise()'.
 		function cuadradoPromise(value) {
+			//Aqui vamos a validar si el valor ingresado en un numero,
+			//si no es un numero entonces se retornara un valor ,
+			//al segundo parametro de la funcion 'reject'.
 			if(typeof value!=="number"){
 				return Promise.reject("El valor ingresado no es un número")
 			}
@@ -62,7 +65,9 @@
 				return cuadradoPromise(Math.random() * 1000)
 			})
 			//Con la propiedad 'catch()',
-			//vamos a ver el resultado de la ejecucion cuando esta fue erronea.
+			//vamos a ver el resultado de la ejecucion cuando esta fue erronea,
+			//esta sera enviada al segundo parametro del la funcion,
+			//la cual en este caso nos mostrara un texto el cual definimos en la funcion.
 			.catch((err)=>{
 				console.error(eer)
 			})
