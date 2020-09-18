@@ -13,6 +13,9 @@
 	<script>
 		//Aqui estamos creando la funcion 'cuadradoPromise()'.
 		function cuadradoPromise(value) {
+			if(typeof value!=="number"){
+				return Promise.reject("El valor ingresado no es un número")
+			}
 			//Aqui vamos a hacer que la funcion retorne una promesa,
 			//entonces vamos a crear la promesa,
 			//a la cual le cargaremos una funcion.
@@ -29,21 +32,42 @@
 			})
 		}
 
-
-		cuadradoPromise(0)
+		//Aqui vamos a ejecutar la funcion, 
+		//cargandole el parametro que nos piden,
+		//en este caso va a ser un numero aleatorio
+		cuadradoPromise(Math.random() * 1000)
+			//Si la promesa se ejecuta correctamente, 
+			//entonces el valor se devolvera por el primer parametro,
+			//que en este primer parametro va a llegar,
+			//todo lo que se ejecute correctamente.
+			//a este parametro le vamos a decir en la funcion,
+			//que se envie un objeto, con dos propiedades.
+			.then((obj) => {
+				//Aqui vamos a mostrar por consola,
+				//que es lo que tienen esos objetos.
+				console.log(obj.value, obj.result);
+				//Aqui vamos a hacer que la funcion, 
+				//retorne una ejecucion de la funcion cuadradoPromise(), 
+				//con el correspondiente valor en el parametro.
+				return cuadradoPromise(Math.random() * 1000)
+			})
+			//Con la propiedad 'then()', 
+			//vamos a ver el resultado de la ejecucion cuando esta fue exitosa.
 			.then((obj) => {
 				console.log(obj.value, obj.result);
-				return cuadradoPromise(17)
+				return cuadradoPromise(Math.random() * 1000)
 			})
 			.then((obj) => {
 				console.log(obj.value, obj.result);
-				return cuadradoPromise(25)
+				return cuadradoPromise(Math.random() * 1000)
 			})
-			.then((obj) => {
-				console.log(obj.value, obj.result);
-				return cuadradoPromise()
+			//Con la propiedad 'catch()',
+			//vamos a ver el resultado de la ejecucion cuando esta fue erronea.
+			.catch((err)=>{
+				console.error(eer)
 			})
 	</script>
 </body>
+
 
 </html>
