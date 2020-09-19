@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        function myFunction() {
-        var str = "Hola mundo adios mundo pa mundo";
-        var n = str.indexOf('mundo',18);
-        return console.log(n)
+        /* var valor = 100; */
+
+        try {
+            var valor = 100 / noexiste;
+        } catch (ex) {
+            alert(ex);
         }
-        myFunction()
     </script>
 </body>
+
 </html>

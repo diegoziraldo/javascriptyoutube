@@ -26,22 +26,51 @@
 			})
 		}
 
+		//Funcion Declarada
+		//Aqui estamos creando una funcion, la cual le pondremos la palabra async,
+		//para poder hacer la funcion asyncrona.
 		async function funcionAsincronaDeclarada() {
+			//Aqui estamos creando un bloque 'try catch',
+			//con este bloque lo que logramos es controlar la ejecucion,
+			//de las funciones, y el manejo de los errores.
+			
+			//En el bloque 'try', vamos a poner el codigo que queremos usar,
+			//el codigo que entra en este bloque no nos devuelve errores,
+			//siempre que se devuelva un error ira al bloque 'catch'.
 			try {
 				console.log('Inicio Async Function');
 
 				let obj = await cuadradoPromise(4);
-				console.log(`Async Function: ${obj.value}, ${obj.result}`);
+				console.log(`Async Function 1: ${obj.value}, ${obj.result}`);
 
 				obj = await cuadradoPromise(45);
-				console.log(`Async Function: ${obj.value}, ${obj.result}`);
+				console.log(`Async Function 2: ${obj.value}, ${obj.result}`);
+
+			//En el bloque 'catch', ingresara solamente el error de la ejecucion de una funcion.
+			} catch (error) {
+				console.log(error)
+
+			}
+		}
+
+		funcionAsincronaDeclarada();
+
+		//Funcion Expresada
+		const funcionAsincronaExpresada = async() => {
+			try {
+				console.log('Inicio Async Function');
+
+				let obj = await cuadradoPromise(4);
+				console.log(`Async Function 3: ${obj.value}, ${obj.result}`);
+
+				obj = await cuadradoPromise(65);
+				console.log(`Async Function 4: ${obj.value}, ${obj.result}`);
 
 			} catch (error) {
 				console.log(error)
 			}
 		}
-
-		funcionAsincronaDeclarada();
+		funcionAsincronaExpresada();
 	</script>
 </body>
 
