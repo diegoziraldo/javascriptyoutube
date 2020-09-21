@@ -35,16 +35,27 @@
 			//de las funciones, y el manejo de los errores.
 			
 			//En el bloque 'try', vamos a poner el codigo que queremos usar,
-			//el codigo que entra en este bloque no nos devuelve errores,
-			//siempre que se devuelva un error ira al bloque 'catch'.
+			//el codigo que entra en este bloque va a ser un código,
+			//no nos devuelve errores.
+			//siempre que se devuelva un error ira al bloque del 'catch'.
 			try {
-				console.log('Inicio Async Function');
+				//Si el código no nos de vuelve un error,
+				//entonces entrara al 'try', el cual imprimira este mensaje.
+				console.log('Inicio Async Function 1');
 
+				//Luego ejecutaremos una funcion,
+				//y la guardaremos dentro de una variable.
 				let obj = await cuadradoPromise(4);
+				
+				//Aqui ejecutaremos el objeto que nos devuelve la funcion
 				console.log(`Async Function 1: ${obj.value}, ${obj.result}`);
 
-				obj = await cuadradoPromise(45);
-				console.log(`Async Function 2: ${obj.value}, ${obj.result}`);
+				//Luego ejecutaremos una funcion,
+				//y la guardaremos dentro de una variable.
+				let obj2 =  await cuadradoPromise(45);
+
+				//Aqui ejecutaremos el objeto que nos devuelve la funcion
+				console.log(`Async Function 2: ${obj2.value}, ${obj2.result}`);
 
 			//En el bloque 'catch', ingresara solamente el error de la ejecucion de una funcion.
 			} catch (error) {
@@ -53,18 +64,23 @@
 			}
 		}
 
+		//Aqui ejecutamos la funcion declarada
 		funcionAsincronaDeclarada();
 
+
 		//Funcion Expresada
+		//Aqui estamos creando una funcion expresada,
+		//la vamos a guardar en una variable para luego ejecutarla directamente.
 		const funcionAsincronaExpresada = async() => {
+			
 			try {
-				console.log('Inicio Async Function');
+				console.log('Inicio Async Function 2');
 
-				let obj = await cuadradoPromise(4);
-				console.log(`Async Function 3: ${obj.value}, ${obj.result}`);
+				let obj3 = await cuadradoPromise(4);
+				console.log(`Async Function 3: ${obj3.value}, ${obj3.result}`);
 
-				obj = await cuadradoPromise(65);
-				console.log(`Async Function 4: ${obj.value}, ${obj.result}`);
+				let obj4 = await cuadradoPromise(65);
+				console.log(`Async Function 4: ${obj4.value}, ${obj4.result}`);
 
 			} catch (error) {
 				console.log(error)
