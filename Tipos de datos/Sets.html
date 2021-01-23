@@ -7,5 +7,47 @@
 </head>
 <body>
 	<h1>Sets</h1>
+	<h3>Los tipo de datos sets, son arreglos que solos aceptan valores primitivos unicos </h3>
+	<script>
+		/* Aqui estamos creando un objeto 'Set' */
+		const set = new Set([1,2,3,3,4,5, 
+							true, false, false, 
+							{},{},
+							"hola", "Hola"])
+		console.log(set)
+
+		const set2 = new Set();
+		set2.add(1);
+		set2.add(2);
+		set2.add(3);
+		set2.add(4);
+		set2.add(true);
+		set2.add(true);
+		set2.add(true);
+
+		console.log(set2)
+		console.log(set2.size)
+
+		console.log('Recorriendo set')
+		for(item of set){
+			console.log(item)
+		}
+
+		console.log('Recorriendo set 2')
+		set2.forEach(item=>console.log((item)))
+
+		let arr = Array.from(set)
+		console.log(arr)
+
+		set.delete(3)
+		console.log(set)
+
+		console.log(set.has(5));
+
+		set2.clear();
+		console.log(set2)
+
+
+	</script>
 </body>
 </html>
