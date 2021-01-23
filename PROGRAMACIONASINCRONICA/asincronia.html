@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Asincronia en javascript</h1>
+
+	<script>
+		
+		console.log("Inicio");
+		//Con setTimeout(), voy a poder ejecutar una funcion,
+		//despues de un determinado tiempo solo una ves.
+/* 		setTimeout(()=>{
+			console.log("Ejecutando un setTimeout(), esto se ejecuta una sola ves");	
+		},1000) */
+
+		//Con setInterval(), voy a poder ejecutar una funcion,
+		//despues de un determinado tiempo, infinitamente.
+/* 		setInterval(()=>{
+			console.log("Ejecutando un setInterval(), esto se ejecuta una sola ves");
+		},3000) */
+
+		//Aqui estamos creando un programa que lo que hace es,
+		//mostrando cada segundo la hora local.
+		//Esto lo logramos creando cada 1000 milisegundos,
+		//el objeto "new Date().toLocaleTimeString()".
+/* 		setInterval(()=>{
+			console.log(new Date().toLocaleTimeString());
+		},1000) */
+
+		let temporizador = setTimeout(()=>{
+			console.log("Hola");
+		},0)
+		console.log("Chau");
+
+		clearTimeout(temporizador);
+
+	/* pagina para ver como trabaja esincronicamente javascript*/
+	//http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D
+
+
+	</script>
+</body>
+</html>
