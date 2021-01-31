@@ -8,32 +8,41 @@
 </head>
 
 <body>
+	<h1>Callbacks</h1>
 	<script>
+		/* Aqui estamos creando una funcion que tiene dos parametros,
+		la primera es un valor numerico, y la segunda es una funcion */
 		function cuadradoCallback(value, callback) {
+			/* Aqui estamos creando un setTimeout(),
+			este metodo va a tener dentro un como primer parametro,
+			y un valor en milisegundos en el segundo parametro */
 			setTimeout(() => {
 				callback(value, value * value)
 			}, 0 | Math.random() * 1000);
 		}
-
+		/* Aqui estamos ejecutando la funcion 'cuadradoCallback()',
+		pasandole los dos parametros que nos pide. 
+		el primero es un valor numerico, 
+		y el segundo es una funcion con otros dos parametros*/
 		cuadradoCallback(0, (value, result) => {
-					console.log('Inicia callback');
+			console.log('Inicia callback');
+			console.log(`Callback:${value}, ${result}`);
+			cuadradoCallback(1, (value, result) => {
+				console.log(`Callback:${value}, ${result}`);
+				cuadradoCallback(2, (value, result) => {
 					console.log(`Callback:${value}, ${result}`);
-					cuadradoCallback(1, (value, result) => {
+					cuadradoCallback(3, (value, result) => {
+						console.log(`Callback:${value}, ${result}`);
+						cuadradoCallback(4, (value, result) => {
+							console.log(`Callback:${value}, ${result}`);
+							cuadradoCallback(5, (value, result) => {
 								console.log(`Callback:${value}, ${result}`);
-								cuadradoCallback(2, (value, result) => {
-											console.log(`Callback:${value}, ${result}`);
-											cuadradoCallback(3, (value, result) => {
-														console.log(`Callback:${value}, ${result}`);
-														cuadradoCallback(4, (value, result) => {
-															console.log(`Callback:${value}, ${result}`);
-															cuadradoCallback(5, (value, result) => {
-																console.log(`Callback:${value}, ${result}`);
-															})
-														})
-													})
-											})
-								})
+							})
+						})
 					})
+				})
+			})
+		})
 	</script>
 </body>
 
