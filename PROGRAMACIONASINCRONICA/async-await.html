@@ -14,15 +14,32 @@
 		//LAS FUNCIONES ASINCRONAS NO REEMPLAZAN A LAS PROMESAS,
 		//SINO QUE TRABAJAN EN CONJUNTO CON ELLA.
 
-		//Aqui estamos creando una funcion 
-		//esta función nos retornara una promesa "Promise()".
+		//Aqui estamos creando una funcion,
+		//esta función nos retornara una promesa "Promise()",
+		//esta promesa tendra dos parametros, "resolve y reject" en ese orden
+		//resolve, nos devolvera el valor correcto,
+		//mientras que reject, nos devolvera el error.
 		function cuadradoPromesa(value) {
-			
+			//Aqui vamos a evaluar si lo que estamos mandando como parametro,
+			//es un valor correcto, 
+			//en este caso debe ser un valor de tipo 'number'. 
 			if (typeof value !== "number") {
+				//Si el valor no es igual al tipo de dato 'number',
+				//entonces nos devolvera una promesa,
+				//con el error desde el parametro del reject
 				return Promise.reject(`El valor: ${value}, no es un numero`)
 			}
+			
+			//Si el valor es igual a un numero, 
+			//entonces nos devolvera una promesa con el valor en el resolve.
 			return new Promise((resolve, reject) => {
-				setTimeout(() => {
+				//dentro de la promesa crearemos un setTimeout(), 
+				//esta funcion nos devolvera,
+				//un valor al parametro del metodo resolve()
+				setTimeout(()=>{
+					//dentro de la funcion "setTimeout", 
+					//tendremos el metodo resolve, que tendra dos popiedades,
+					//"value", y "result"
 					resolve({
 						value,
 						result: value * value
@@ -33,10 +50,21 @@
 
 		/* console.log(cuadradoPromesa(4)); */
 
+		/* Ejecucion de promesas */
+
+
+
+		//Aqui crearemos una funcion asincrona.
 		async function funcionAsincronaDeclarada() {
 			try {
+
 				console.log('Inicio asincrono de la funcion');
+				//Aqui ejecutaremos la funcion "cuadradoPromesa()",
+				//el cual nos devolvera un objeto,
+				//este objeto lo guardaremos en una variable "obj" 
 				let obj = await cuadradoPromesa(1);
+				//Aqui mostraremos el valor de las propiedades del objeto,
+				//que nos retorna la funcion "cuadradoPromesa()"
 				console.log(`Async function: ${obj.value}, ${obj.result}`);
 
 				obj = await cuadradoPromesa(2);

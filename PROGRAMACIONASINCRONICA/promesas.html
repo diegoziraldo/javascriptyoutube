@@ -11,10 +11,29 @@
 	<h1>Promesas</h1>
 
 	<script>
-		function cuadradoPromesa(value) {
-			return new Promise((resolve, reject) => {
+		//LAS FUNCIONES ASINCRONAS NO REEMPLAZAN A LAS PROMESAS,
+		//SINO QUE TRABAJAN EN CONJUNTO CON ELLA.
 
+		//Aqui estamos creando una funcion,
+		//esta función nos retornara una promesa "Promise()",
+		//esta promesa tendra dos parametros, "resolve y reject" en ese orden
+		//resolve, nos devolvera el valor correcto,
+		//mientras que reject, nos devolvera el error.
+		function cuadradoPromesa(value) {
+			if(typeof value!="number"){
+				return Promise.reject('El valor ingresado no es un numero')
+			}
+
+			//Si el valor es igual a un numero,
+			//entonces nos devolvera una promesa con el valor en el resolve.
+			return new Promise((resolve, reject) => {
+				//dentro de la promesa crearemos un setTimeout(),
+				//esta funcion nos devolvera,
+				//un valor al parametro del metodo resolve()
 				setTimeout(() => {
+					//dentro de la funcion "setTimeout",
+					//tendremos el metodo resolve, que tendra dos popiedades,
+					//"value", y "result"
 					resolve({
 						value,
 						result: value * value
@@ -23,11 +42,32 @@
 			})
 		}
 
+		/* Ejecicion de promesas */
+		//Aqui estamos ejecutando la funcion "cuadradoPromesa()",
+		//la cual es una promesa.
 		cuadradoPromesa(3)
+			//Cuando tenemos una promesa, todo lo que vendra resuelto,
+			//lo podremos ver con el metodo ".then()".
 			.then((obj) => {
-				console.log(`${obj.value},${obj.result}`);
+				//Aqui vamos a poder ver el objeto,
+				//que nos devuelve la promesa "cuadradoPromesa()"
+				console.log(`${obj.value} - ${obj.result}`);
+				return cuadradoPromesa(8)
 			})
-			.catch();
+			.then((obj)=>{
+				console.log(`${obj.value} - ${obj.result}`);
+				return cuadradoPromesa('5')
+			})
+			//Cuando tenemos una promesa, todo lo que vendra como un error,
+			//vendra desde el metodo "reject()",
+			//lo podremos ver con el metodo ".cath()".
+			//Dentro del metodo "catch()", 
+			//haremos una funcion donde mostraremos por consola el error,
+			//el error se lo pasaremos por parametros,
+			//a la funcion que esta dentro de los parametros del catch().
+			.catch((error)=>{
+				console.error(error)
+			});
 	</script>
 </body>
 

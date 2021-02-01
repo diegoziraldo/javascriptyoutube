@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p>https://programacionymas.com/blog/promesas-javascript</p>
+	<h1>Promesas Programacion y mas</h1>
+
+	<script>
+		new Promise((resolve, reject) => {
+
+		})
+
+		let miPromesa = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve('Hola');
+			}, 1000)
+		})
+
+		miPromesa.then((texto) => {
+			console.log(texto)
+		})
+
+
+		function unSegundoDespues(otraFunc) {
+			setTimeout(otraFunc, 1000)
+		}
+
+		/* CALLBACK */
+		unSegundoDespues(() => {
+			console.log(1);
+			unSegundoDespues(() => {
+				console.log(2);
+				unSegundoDespues(() => {
+					console.log(3);
+				})
+			})
+		})
+
+		/* PROMESA */
+
+		function esperar1Seg(){
+			return new Promise((resolve, reject)=>{
+				setTimeout(resolve,1000)
+			})
+		}
+
+		esperar1Seg()
+		.then(()=>{
+			console.log(1);
+			return esperar1Seg();
+		})
+		.then(()=>{
+			console.log(2);
+			return esperar1Seg();
+		})
+		.then(()=>{
+		console.log(3);
+		return esperar1Seg();
+		})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>
