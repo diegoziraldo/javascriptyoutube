@@ -20,7 +20,7 @@
 		//resolve, nos devolvera el valor correcto,
 		//mientras que reject, nos devolvera el error.
 		function cuadradoPromesa(value) {
-			if(typeof value!="number"){
+			if (typeof value != "number") {
 				return Promise.reject('El valor ingresado no es un numero')
 			}
 
@@ -49,14 +49,26 @@
 			//Cuando tenemos una promesa, todo lo que vendra resuelto,
 			//lo podremos ver con el metodo ".then()".
 			.then((obj) => {
+				console.log(`Inicio promesa`);
+				return cuadradoPromesa(3)
+			})
+			.then((obj) => {
 				//Aqui vamos a poder ver el objeto,
 				//que nos devuelve la promesa "cuadradoPromesa()"
 				console.log(`${obj.value} - ${obj.result}`);
 				return cuadradoPromesa(8)
 			})
-			.then((obj)=>{
+			.then((obj) => {
 				console.log(`${obj.value} - ${obj.result}`);
-				return cuadradoPromesa('5')
+				return cuadradoPromesa(5)
+			})
+			.then((obj) => {
+				console.log(`${obj.value} - ${obj.result}`);
+				return cuadradoPromesa(5)
+			})
+			.then((obj) => {
+				console.log(`Fin promesa`);
+
 			})
 			//Cuando tenemos una promesa, todo lo que vendra como un error,
 			//vendra desde el metodo "reject()",
@@ -65,7 +77,7 @@
 			//haremos una funcion donde mostraremos por consola el error,
 			//el error se lo pasaremos por parametros,
 			//a la funcion que esta dentro de los parametros del catch().
-			.catch((error)=>{
+			.catch((error) => {
 				console.error(error)
 			});
 	</script>

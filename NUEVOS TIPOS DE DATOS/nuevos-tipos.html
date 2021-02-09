@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Nuevos tipos de datos en javascript</h1>
+	<li>Los simbolos son datos primitivos</li>
+	<script>
+		
+		let id = "Hola";
+		let id2 = "Hola";
+		//Estas variables son exactamente iguales.
+		console.log(id===id2);
+
+		//Aqui estamos guardando un constructor "Symbol()"
+		let ids = Symbol();
+		let ids2 = Symbol();
+
+		//Estas variables no son exactamente iguales.
+		console.log(ids===ids2);
+	</script>
+</body>
+</html>

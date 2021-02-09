@@ -54,14 +54,18 @@
 
 
 
-		//Aqui crearemos una funcion asincrona.
+		//Aqui crearemos una funcion asincrona, 
+		//con la palabra reservada "async"
 		async function funcionAsincronaDeclarada() {
 			try {
 
 				console.log('Inicio asincrono de la funcion');
 				//Aqui ejecutaremos la funcion "cuadradoPromesa()",
 				//el cual nos devolvera un objeto,
-				//este objeto lo guardaremos en una variable "obj" 
+				//este objeto lo guardaremos en una variable "obj".
+				//Con la palabra reservada "await",
+				//haremos que la funcion que nos devolvera una promesa,
+				//se ejecute cuando esa promesa sea devuelta.
 				let obj = await cuadradoPromesa(1);
 				//Aqui mostraremos el valor de las propiedades del objeto,
 				//que nos retorna la funcion "cuadradoPromesa()"
@@ -93,6 +97,7 @@
 
 		funcionAsincronaDeclarada();
 
+		/* Aqui estamos crenado una funcion Asincrona Expresada */
 		const funcionAsincronaExpresada = async() => {
 			try {
 				let obj = await cuadradoPromesa(8);
