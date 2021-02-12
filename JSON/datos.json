@@ -1,0 +1,11 @@
+{
+	"Nombre": "Diego",
+	"Edad" : "35",
+	"Casado": "false",
+	"array":["Dormir", "Estudiar", "Comer"],
+	"objeto":{
+		"email": "ziraldodiego@gmail.com",
+		"tel": 1150973167
+	}
+
+}
