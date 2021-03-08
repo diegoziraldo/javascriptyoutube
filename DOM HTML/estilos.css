@@ -1,0 +1,40 @@
+        /* Aqui vamos a crear dos variables css */
+        /* para hacer esto tendremos que poner las variables 
+	adentro de la etiqueta ':root{}' */
+        :root {
+                --yellow-color: #f7df1e;
+        	--dark-color: #222;
+        }
+        
+        
+        
+        .card {
+        	display: inline-block;
+        }
+
+        .cards{
+                border:thin solid var(--dark-color);
+                padding:1rem;
+        }
+
+        .card figcaption {
+        	padding: 1rem;
+                background-color: black;
+                color: aliceblue;
+        }
+
+        .rotate-45 {
+        	transform: rotate(45deg);
+        }
+
+        .rotate-135 {
+        	transform: rotate(135deg);
+        }
+
+        .opacity-80 {
+        	opacity: .8;
+        }
+
+        .sepia {
+        	filter: sepia(1);
+        }

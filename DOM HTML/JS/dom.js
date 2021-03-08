@@ -108,3 +108,8 @@ $linkDOM.setAttribute('href',"https://elpais.com");
 //Data-attributes
 
 console.log($linkDOM.getAttribute("data-description"));
+console.log($linkDOM.dataset);
+
+$linkDOM.setAttribute('data-description','Modelo de objeto del documento')
+console.log($linkDOM.dataset);
+
