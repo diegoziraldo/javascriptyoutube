@@ -1,3 +1,5 @@
+/* TEXTO Y HTML */
+
 //Aqui estamos guardando dentro de una variable lo que estamos,
 //capturando con el metodo 'get.ElementById()'
 const $whatIsDom = document.getElementById('que-es');

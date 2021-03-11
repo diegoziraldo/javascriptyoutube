@@ -1,4 +1,4 @@
-
+/* RECORRIENDO EL DOM */
 
 const $cards = document.querySelector('.cards');
 
