@@ -11,4 +11,4 @@ $newCard.classList.add('card')
 
 //$cards.replaceChild($newCard,$cards.children[2])
 
-$cards.insertBefore($newCard)
+$cards.insertBefore($newCard);
