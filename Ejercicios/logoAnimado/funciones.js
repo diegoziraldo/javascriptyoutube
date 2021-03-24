@@ -27,3 +27,7 @@ texto.addEventListener('mouseenter',()=>{
         }
     }, 30);
 })
+
+
+
+
